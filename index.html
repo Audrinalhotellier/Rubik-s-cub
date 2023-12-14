@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Rubik's cube on move</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="stylesheet" href="styles.css" />
+
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+    <script src="gesture-detector.js"></script>
+    <script src="gesture-handler.js"></script>
+  </head>
+
+  <body>
+    <a-scene
+      arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
+      embedded
+      renderer="logarithmicDepthBuffer: true;"
+      vr-mode-ui="enabled: false"
+      gesture-detector
+      id="scene"
+    >
+    <a-nft
+    type="nft"
+    url="assets/Mazzeru"
+    smooth="true"
+    smoothCount="50"
+    smoothTolerance="0.1"
+    smoothThreshold="50"
+    raycaster="objects: .clickable"
+    emitevents="true"
+    cursor="fuse: false; rayOrigin: mouse;"
+  >
+    <a-entity
+      gltf-model="rubiks.glb"
+      scale="1500 1500 1500"
+      position="150 350 -300"
+      rotation="0 0 0"
+      gesture-handler
+    >
+    </a-entity>
+  </a-nft>
+      <a-entity camera></a-entity>
+    </a-scene>
+  </body>
+</html>

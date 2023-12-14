@@ -1,11 +1,4 @@
 /* global AFRAME, THREE */
-navigator.mediaDevices.getUserMedia({ video: true })
-  .then((stream) => {
-    // Le code pour gérer le flux vidéo va ici
-  })
-  .catch((error) => {
-    console.error("Erreur d'autorisation de caméra :", error);
-  });
 
 AFRAME.registerComponent("gesture-handler", {
   schema: {

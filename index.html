@@ -14,6 +14,17 @@
   </head>
 
   <body>
+    <script>
+      navigator.mediaDevices
+        .getUserMedia({ video: true })
+        .then((stream) => {
+          // Le code pour gérer le flux vidéo va ici
+        })
+        .catch((error) => {
+          console.error("Erreur d'autorisation de caméra :", error);
+        });
+    </script>
+
     <a-scene
       arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
       embedded
@@ -22,26 +33,26 @@
       gesture-detector
       id="scene"
     >
-    <a-nft
-    type="nft"
-    url="assets/Mazzeru"
-    smooth="true"
-    smoothCount="50"
-    smoothTolerance="0.1"
-    smoothThreshold="50"
-    raycaster="objects: .clickable"
-    emitevents="true"
-    cursor="fuse: false; rayOrigin: mouse;"
-  >
-    <a-entity
-      gltf-model="rubiks.glb"
-      scale="1500 1500 1500"
-      position="150 350 -300"
-      rotation="0 0 0"
-      gesture-handler
-    >
-    </a-entity>
-  </a-nft>
+      <a-nft
+        type="nft"
+        url="assets/Mazzeru"
+        smooth="true"
+        smoothCount="50"
+        smoothTolerance="0.1"
+        smoothThreshold="50"
+        raycaster="objects: .clickable"
+        emitevents="true"
+        cursor="fuse: false; rayOrigin: mouse;"
+      >
+        <a-entity
+          gltf-model="rubiks.glb"
+          scale="1500 1500 1500"
+          position="150 350 -300"
+          rotation="0 0 0"
+          gesture-handler
+        >
+        </a-entity>
+      </a-nft>
       <a-entity camera></a-entity>
     </a-scene>
   </body>
